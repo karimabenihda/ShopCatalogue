@@ -1,0 +1,77 @@
+/* Styles pour l'écran de chargement */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3f7fc;
+  color: #6892d5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3; /* Couleur de fond */
+  border-top: 5px solid #6892d5; /* Couleur du spinner */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 200px; /* Show a small portion on large screens */
+  height: 100vh; /* Full viewport height */
+  top: 0;
+  left: 0;
+  background-color: #f3f7fc;
+  overflow-y: auto;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out; /* Smooth transition for toggling */
+}
+
+.sidebar.open {
+  width: 0px; /* Expand to full sidebar width */
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #6892d5;
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+/* Responsive behavior */
+@media (max-width: 550px) {
+  .sidebar {
+    width: 100%; /* Full width for small screens */
+  }
+}
