@@ -3,8 +3,7 @@ import Category from './components/Category.jsx';
 import Prices from './components/Prices.jsx';
 import Affichage from './components/Produits.jsx';
 import { useState, useEffect } from 'react';
-import { RiArrowDropRightLine } from "react-icons/ri";
-import { RiArrowDropLeftLine } from "react-icons/ri";
+import { RiArrowDropRightLine, RiArrowDropLeftLine } from 'react-icons/ri';
 
 function App() {
   const [loading, setLoading] = useState(true); // État pour gérer le chargement
